@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSD-Od ポートフォリオ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ダーク：ヘッダーとヒーロー ===== -->
+  <div class="top dark" id="top">
+    <header class="shell site-header">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+        <span class="brand-text">
+          <span class="brand-name">CSD-Od</span>
+          <span class="brand-sub">DESIGN &amp; DEVELOPMENT</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="メインメニュー">
+        <a href="#works">Works</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
+        <a class="nav-contact" href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="shell hero">
+            <div class="hero-text">
+        <p class="eyebrow">SECURITY-MINDED · WEB DEVELOPMENT</p>
+        <h1>使う人の視点から、<br><em>安全で扱いやすい</em><br>仕組みを。</h1>
+        <p class="hero-lead">Webアプリケーションの開発を中心に、データベース操作や業務の自動化にも取り組んでいます。利用者の操作性や実際の運用場面を考え、機能設計から実装、動作確認まで行っています。</p>
+        <ul class="hero-tags">
+          <li>PHP</li>
+          <li>JavaScript</li>
+          <li>SQL</li>
+          <li>VBA（Excel）</li>
+          <li>GAS</li>
+          <li class="learning">Python 学習中</li>
+        </ul>
+        <div class="buttons">
+          <a class="btn btn-mint" href="#works">制作実績を見る</a>
+          <a class="btn btn-outline-dark" href="#skills">使用技術について</a>
+        </div>
+      </div>
+
+      <div class="concept" aria-hidden="true">
+        <div class="concept-card">
+          <div class="window-bar">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="mono">approach.preview</span>
+          </div>
+          <div class="concept-body">
+            <div class="flow">
+              <div><span class="mono">01 / OBSERVE</span><b>利用者理解</b></div>
+              <div><span class="mono">02 / DESIGN</span><b>要件定義</b></div>
+              <div><span class="mono">03 / VERIFY</span><b>実装・検証</b></div>
+            </div>
+            <div class="code mono">
+              <div class="dim">// Development principles</div>
+              <div><span class="mint">const</span> approach = {</div>
+              <div class="indent">users: <span class="gold">"first"</span>,</div>
+              <div class="indent">security: <span class="gold">"by design"</span>,</div>
+              <div class="indent">quality: <span class="gold">"verify"</span></div>
+              <div>};</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <main>
+    <!-- ===== ライト：制作実績 ===== -->
+        <section class="section light" id="works">
+      <div class="shell">
+        <div class="heading-row">
+          <div>
+            <p class="eyebrow">01 / SELECTED WORKS</p>
+            <h2>制作実績</h2>
+          </div>
+          <p class="intro">コンプライアンス対応や、職場の心理的安全性の向上を支援するアプリケーションを中心に、利用者と管理者の双方の視点から、実際の業務運用を考えて設計しています。</p>
+        </div>
+
+        <div class="works">
+          <article class="work">
+            <img class="work-visual" src="images/joden-checker.png" alt="情報伝達チェッカーの管理者画面">
+            <div class="work-body">
+              <p class="work-meta mono">COMPLIANCE / PSYCHOLOGICAL SAFETY</p>
+              <h3>情報伝達チェッカー</h3>
+              <p>社内の情報が「誰から誰へ、いつ届いたか」を記録し、業務連絡の途切れや新人教育の漏れを、管理者が一目で見つけられるようにするコンプライアンス管理の仕組みです。PWA化を前提としたデモ版として公開しています。</p>
+              <ul class="points">
+                <li>情報を「完了するまで残る案件」として扱う回覧板型の設計</li>
+                <li>操作を出来事として追記だけで記録し、状態やタイムラインを記録から作る</li>
+                <li>記録上のパターンを示すまでにとどめ、意図の判定は人の手続きに任せる</li>
+              </ul>
+              <ul class="chips">
+                <li>JavaScript</li>
+                <li>要件定義</li>
+                <li>Figma</li>
+                <li>Git / GitHub</li>
+              </ul>
+              <div class="buttons">
+                <a class="btn btn-teal" href="https://csd-od.github.io/joden-checker-demo/" target="_blank" rel="noopener">デモを見る</a>
+                <a class="btn btn-outline-light" href="https://github.com/CSD-Od/joden-checker-demo" target="_blank" rel="noopener">GitHub</a>
+              </div>
+              <p class="note">ソースコードの全体は、選考の中で個別に公開できます。</p>
+            </div>
+          </article>
+
+          <article class="work">
+            <img class="work-visual" src="images/workfit-lab.png" alt="WorkFit LABのトップページ">
+            <div class="work-body">
+              <p class="work-meta mono">HR / MULTI-FACETED EVALUATION</p>
+              <h3>WorkFit LAB</h3>
+              <p>応募者を総合点でランキングせず、どんな情報形式や判断条件で力を発揮しやすいかを、業務に近い短い課題から観測する職務適性テストです。面接時の情報整理と評価を補助します。</p>
+              <ul class="points">
+                <li>総合点を作らず、10の軸ごとの傾向として結果を示す採点設計</li>
+                <li>設問の重みと想定回答はサーバー内だけで扱い、ブラウザに渡さない</li>
+                <li>nonce・prepare文・権限判定など、WordPressの仕組みに沿ったセキュリティ対策</li>
+              </ul>
+              <ul class="chips">
+                <li>WordPress</li>
+                <li>PHP</li>
+                <li>SQL</li>
+                <li>JavaScript</li>
+                <li>Figma</li>
+              </ul>
+              <div class="buttons">
+                <a class="btn btn-teal" href="https://csd-od.github.io/workfit-lab-demo/" target="_blank" rel="noopener">デモを見る</a>
+                <a class="btn btn-outline-light" href="https://github.com/CSD-Od/workfit-lab-demo" target="_blank" rel="noopener">GitHub</a>
+              </div>
+              <p class="note">デモは静的版です。採点とデータベースはWordPress版で動作し、ソースコードの全体は選考の中で個別に公開できます。</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ダーク：スキル ===== -->
+    <section class="section dark" id="skills">
+      <div class="shell two-col">
+                <div>
+          <p class="eyebrow">02 / SKILLS &amp; TOOLS</p>
+          <h2>技術を学び、<br>組み合わせて実装する。</h2>
+          <p class="intro">学んだ技術知識を随時更新しながら、生成AI（Claude）を開発の補助として活用しています。生成されたコードも、仕様との整合性を確かめ、自分で理解・検証したうえで実装しています。</p>
+          <h3 class="skill-heading">使用技術</h3>
+          <ul class="skill-tags">
+            <li>PHP</li>
+            <li>JavaScript</li>
+            <li>SQL</li>
+            <li>VBA（Excel）</li>
+            <li>GAS</li>
+            <li>HTML / CSS</li>
+            <li>WordPress</li>
+          </ul>
+          <h3 class="skill-heading">開発環境・バージョン管理</h3>
+          <ul class="skill-tags">
+            <li>Git</li>
+            <li>GitHub</li>
+          </ul>
+          <h3 class="skill-heading">デザイン・制作</h3>
+          <ul class="skill-tags">
+            <li>Figma</li>
+            <li>CLIP STUDIO PAINT</li>
+          </ul>
+          <h3 class="skill-heading">学習中</h3>
+          <ul class="skill-tags">
+            <li class="learning">Python</li>
+          </ul>
+        </div>
+
+        <div class="terminal mono" aria-hidden="true">
+          <div class="terminal-head">design-principles.txt</div>
+          <div class="terminal-body">
+            <div class="dim"># DESIGN PRINCIPLES</div>
+            <div><span class="gold">01</span>  Understand real user behavior.</div>
+            <div><span class="gold">02</span>  Identify risks before implementation.</div>
+            <div><span class="gold">03</span>  Create clear, accessible interfaces.</div>
+            <div><span class="gold">04</span>  Review and verify AI-assisted code.</div>
+            <div class="prompt"><span class="mint">&gt; </span>Build systems that people can trust<span class="mint">_</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ライト：考え方 ===== -->
+        <section class="section white" id="about">
+      <div class="shell two-col">
+        <div>
+          <p class="eyebrow">03 / ABOUT MY APPROACH</p>
+          <h2>現場の視点を、<br>設計に落とし込む。</h2>
+          <p class="intro">利用者の行動や心理、想定外の操作まで考えた要件定義を重視しています。接客業で培った視点を生かし、設計の段階から対策を検討しています。UIやビジュアルも自分で制作し、独自性や権利関係に配慮しながら、機能性と見た目のわかりやすさの両立を目指しています。</p>
+        </div>
+        <ol class="steps">
+          <li>
+            <strong>利用者の行動と心理を想定する</strong>
+            <p>使う人が疑問や不安を感じる点、迷いやすい操作を考える。</p>
+          </li>
+          <li>
+            <strong>運用とセキュリティのリスクを洗い出す</strong>
+            <p>運用上の問題や情報管理のリスクを、設計の段階で整理して対策を考える。</p>
+          </li>
+          <li>
+            <strong>実装と検証を繰り返す</strong>
+            <p>作って終わりにせず、仕様とコードが合っているかを確かめる。</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section dark" id="goal">
+      <div class="shell goal">
+        <p class="eyebrow">04 / FUTURE GOAL</p>
+        <h2>安全な社内AI環境を、<br>つくる側へ。</h2>
+        <p class="intro">将来はサイバーセキュリティ分野の専門性を高め、情報保護やアクセス制御を考えた、安全な社内向けAI環境の構築に携わりたいと考えています。特に、コーディングやコードレビューを補助し、開発業務の効率化とセキュリティを両立できるシステムの実現を目指しています。</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== ダーク：連絡先 ===== -->
+  <footer class="footer" id="contact">
+    <div class="shell">
+      <div class="footer-row">
+        <div>
+          <p class="eyebrow">05 / CONTACT</p>
+                    <p class="contact-text">ご連絡は、リクルートサイトのメッセージ機能からお願いいたします。</p>
+          <a class="footer-link" href="https://github.com/CSD-Od" target="_blank" rel="noopener">GitHub：CSD-Od</a>
+        </div>
+        <a class="footer-link" href="#top">ページの先頭に戻る</a>
+      </div>
+      <p class="copyright">© 2026 CSD-Od</p>
+    </div>
+  </footer>
+
+</body>
+</html>
