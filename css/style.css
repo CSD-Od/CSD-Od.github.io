@@ -1,341 +1,581 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CSD-Od ポートフォリオ</title>
-  <meta name="description" content="課題の発見から調査・分析、要件定義、Webアプリケーションの開発までを一人で一貫して行う CSD-Od のポートフォリオです。">
-  <script>document.documentElement.classList.add('js');</script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261109-2">
-</head>
-<body>
+/* ===== 色と文字（ここを変えると全体が変わる） ===== */
+:root {
+  --paper: #F3F6F5;      /* 地の色（情報伝達チェッカーの地色に近い、緑みのグレー） */
+  --tint: #E4ECE8;       /* 交互に敷く、少し濃い地 */
+  --card: #FFFFFF;
+  --ink: #18242F;        /* 文字 */
+  --sub: #3F4E5B;        /* 補足の文字 */
+  --teal: #0B7377;       /* リンクとボタン */
+  --teal-dark: #085B5E;
+  --gold: #9A7432;       /* ◆の印 */
+  --gold-text: #7A5A22;  /* 小さな見出し（金の文字） */
+  --line: #BFCEC8;
 
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="handle" href="#top"><span class="diamond" aria-hidden="true"></span>CSD-Od</a>
-      <nav aria-label="ページ内の移動">
-        <ul class="nav-list">
-          <li><a href="#process">進め方</a></li>
-          <li><a href="#research">調査と分析</a></li>
-          <li><a href="#works">制作物</a></li>
-          <li><a href="#skills">技術</a></li>
-          <li><a href="#contact">連絡先</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  --font: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", "Yu Gothic", sans-serif;
+}
 
-  <main id="top">
+/* ===== 全体 ===== */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
-    <!-- はじめに -->
-    <section class="intro wrap">
-      <p class="intro-hello reveal">はじめまして、CSD-Od です。</p>
-      <h1 class="reveal"><span class="h1-question">【能力があっても活かされないのはなぜか】</span>その問いを調べて、仕組みにしています。</h1>
-      <p class="intro-lead reveal">人と組織のあいだで起きる問題を見つけ、公的な統計で確かめ、要件定義からWebアプリケーションの開発まで、一人で一貫して取り組んでいます。接客の仕事で身につけた「使う人がどこで迷い、何に不安を感じるか」という視点を、設計の土台にしています。</p>
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.85;
+  letter-spacing: 0.03em;
+}
 
-      <div class="want reveal">
-        <h2 class="want-title">これからやっていきたいこと</h2>
-        <p>人の力が正しく活かされる職場を、システムの側から支えたいと考えています。まずは、現場の課題をデータで確かめてから道具を作る仕事に携わり、将来はセキュリティの専門性を高めて、情報保護やアクセス制御を考えた安全な社内向けAI環境づくりに関わることが目標です。</p>
-      </div>
-    </section>
+h1, h2, h3, p { margin: 0; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
 
-    <!-- 進め方 -->
-    <section class="section" id="process">
-      <div class="wrap">
-        <h2 class="section-title reveal">進め方</h2>
-        <p class="section-lead reveal">ツールを作る前に、そのツールが本当に必要とされているかを確かめるところから始めます。</p>
+a {
+  color: var(--teal);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+a:hover { color: var(--teal-dark); }
 
-        <ol class="steps">
-          <li class="step reveal">
-            <span class="step-no" aria-hidden="true">1</span>
-            <div>
-              <h3>問いを立てる</h3>
-              <p>現場で感じた違和感を、確かめられる問いにします。<span class="eg">例：能力があっても活かされないのはなぜか</span></p>
-            </div>
-          </li>
-          <li class="step reveal">
-            <span class="step-no" aria-hidden="true">2</span>
-            <div>
-              <h3>調べて、分析する</h3>
-              <p>OECDの国際調査や政府統計、公開された民間調査を使い、Excelで分析します。<span class="eg">例：4本の分析レポート</span></p>
-            </div>
-          </li>
-          <li class="step reveal">
-            <span class="step-no" aria-hidden="true">3</span>
-            <div>
-              <h3>課題を取り出す</h3>
-              <p>分析の結果から、仕組みで解決できる課題を見つけます。<span class="eg">例：能力の高い人の88.2%が、職場の教育訓練とつながっていない</span></p>
-            </div>
-          </li>
-          <li class="step reveal">
-            <span class="step-no" aria-hidden="true">4</span>
-            <div>
-              <h3>要件を決める</h3>
-              <p>使う人の行動や心理、想定外の操作、運用とセキュリティのリスクまで洗い出して文書にします。<span class="eg">例：個人サイトの要件定義書は第2.38版まで改訂</span></p>
-            </div>
-          </li>
-          <li class="step reveal">
-            <span class="step-no" aria-hidden="true">5</span>
-            <div>
-              <h3>つくる</h3>
-              <p>Figmaで画面を決め、PHP・JavaScript・WordPressなどで実装し、Gitで変更を記録します。</p>
-            </div>
-          </li>
-          <li class="step reveal">
-            <span class="step-no" aria-hidden="true">6</span>
-            <div>
-              <h3>確かめる</h3>
-              <p>仕様とコードが合っているか、公開前の確認項目に漏れがないかを点検します。</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
+:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
 
-    <!-- 調査と分析 -->
-    <section class="section section-tint" id="research">
-      <div class="wrap">
-        <h2 class="section-title reveal">調査と分析</h2>
-        <p class="section-lead reveal">4本のレポートは、「能力があっても活かされないのはなぜか」という一つの問いを、能力が育つ入口から、組織で評価される段階までたどったシリーズです。分析はすべてExcelで行い、元データを直すと結果が計算し直される構成にしています。</p>
+.wrap {
+  width: min(860px, 100% - 48px);
+  margin-inline: auto;
+}
+.wrap.narrow { width: min(680px, 100% - 48px); }
 
-        <div class="reports">
-          <article class="report reveal" id="report-01">
-            <p class="report-stage">能力が育つ入口</p>
-            <h3><span class="report-no">01</span>学習機会へのアクセス格差は認知能力の活用を阻害するのか</h3>
-            <dl class="report-meta">
-              <div><dt>研究期間</dt><dd>2026年7月</dd></div>
-              <div><dt>使ったデータ</dt><dd>OECD 国際成人力調査（PIAAC 2023）日本データ</dd></div>
-            </dl>
-            <p>認知能力の高い人のうち88.2%（2,527人）が、過去1年間に教育訓練を受けていませんでした。その9割以上は働いており、職場で力を使いながらも、組織的な学びの機会とつながっていない「潜在人材」であることがわかりました。</p>
-            <div class="report-foot">
-              <p class="links-to">この分析から：<a href="#work-workfit">WorkFit LAB</a>、<a href="#work-joden">情報伝達チェッカー</a></p>
-              <a class="file-link" href="reports/report01-learning-access.xlsx" download>Excelファイル（7.2MB）</a>
-            </div>
-          </article>
+.section { padding: 80px 0; }
+.section-tint { background: var(--tint); }
 
-          <article class="report reveal" id="report-03">
-            <p class="report-stage">能力が育つ入口</p>
-            <h3><span class="report-no">03</span>家庭の経済状況は学習機会格差にどのような影響を及ぼすのか</h3>
-            <dl class="report-meta">
-              <div><dt>研究期間</dt><dd>2026年7月13日〜7月27日</dd></div>
-              <div><dt>使ったデータ</dt><dd>政府統計 e-Stat（子供の生活状況調査、子供の学習費調査）</dd></div>
-            </dl>
-            <p>01で扱えなかった「親の収入」を政府統計で補いました。世帯収入が高いほど学習費と成績の自己評価が高く、01で使った「親の学歴」を家庭の経済状況の目安とすることにも、一定の裏付けが得られました。</p>
-            <div class="report-foot">
-              <p class="links-to">01の派生レポート</p>
-              <a class="file-link" href="reports/report03-household-income.xlsm" download>Excelファイル（マクロ付き・0.1MB）</a>
-            </div>
-          </article>
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--line);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+/* 見出しの頭に、サイトの印の◆を置く */
+.section-title::before {
+  content: "";
+  flex: none;
+  width: 10px;
+  height: 10px;
+  background: var(--gold);
+  transform: rotate(45deg);
+}
 
-          <article class="report reveal" id="report-02">
-            <p class="report-stage">学び続けるかどうかの分かれ道</p>
-            <h3><span class="report-no">02</span>学び続ける人の特徴とは何か</h3>
-            <dl class="report-meta">
-              <div><dt>研究期間</dt><dd>2026年7月13日〜7月27日</dd></div>
-              <div><dt>使ったデータ</dt><dd>OECD 国際成人力調査（PIAAC 2023）日本データ</dd></div>
-            </dl>
-            <p>教育訓練を受けた人は、受けていない人より読解力と数的思考力が約20点高く、ICTを使う頻度も高い傾向がありました。能力そのものだけでなく、学びや情報技術に触れられる環境の大切さを示しています。</p>
-            <div class="report-foot">
-              <p class="links-to">この分析から：<a href="#work-workfit">WorkFit LAB</a></p>
-              <a class="file-link" href="reports/report02-lifelong-learners.xlsx" download>Excelファイル（2.7MB）</a>
-            </div>
-          </article>
+.section-lead {
+  max-width: 40em;
+  margin-bottom: 36px;
+  color: var(--sub);
+}
 
-          <article class="report reveal" id="report-04">
-            <p class="report-stage">組織で評価される段階</p>
-            <h3><span class="report-no">04</span>インセンティブは人をどう変えるか</h3>
-            <dl class="report-meta">
-              <div><dt>研究期間</dt><dd>2026年7月18日〜8月5日</dd></div>
-              <div><dt>使ったデータ</dt><dd>産労総合研究所、あしたのチーム、Job総研の公開調査</dd></div>
-            </dl>
-            <p>従業員の78.7%が評価によって意欲が下がった経験を持ち、「制度がうまくいっている」と感じる割合は、経営者と従業員で42ポイントの差がありました。業界事例から立てた10の仮説を、データで確かめられるものと確かめられないものに分けて検証しています。</p>
-            <div class="report-foot">
-              <p class="links-to">この分析から：<a href="#work-workfit">WorkFit LAB</a>、<a href="#work-joden">情報伝達チェッカー</a></p>
-              <a class="file-link" href="reports/report04-incentives.xlsx" download>Excelファイル（0.1MB）</a>
-            </div>
-          </article>
-        </div>
+.note,
+.small {
+  font-size: 0.875rem;
+  line-height: 1.8;
+  color: var(--sub);
+}
+.note { margin-top: 24px; }
 
-        <p class="note reveal">どのレポートも、関係のあるデータを並べて傾向を確かめる探索的な分析です。因果関係までは示していません。</p>
-      </div>
-    </section>
+/* ◆の印（個人サイトと共通のモチーフ） */
+.diamond {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-right: 10px;
+  border: 1.5px solid var(--gold);
+  transform: rotate(45deg) translateY(-2px);
+}
 
-    <!-- 分析から生まれたもの -->
-    <section class="section" id="bridge">
-      <div class="wrap">
-        <h2 class="section-title reveal">分析から、つくるものへ</h2>
-        <p class="section-lead reveal">分析で見えた課題を、どの制作物でどう解こうとしているかの対応です。</p>
+/* ===== ヘッダー ===== */
+.header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 24px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
 
-        <div class="bridge">
-          <div class="bridge-head" aria-hidden="true">
-            <span>分析でわかったこと</span><span>取り出した課題</span><span>制作物</span>
-          </div>
+.handle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  text-decoration: none;
+}
 
-          <div class="bridge-row reveal">
-            <p class="b-from"><a href="#report-01">01</a>・<a href="#report-02">02</a> 能力が高くても、学びの機会とつながっていない人が多い</p>
-            <p class="b-issue">学歴などの一つの物差しでは、その人が力を出しやすい条件が見えない</p>
-            <p class="b-to"><a href="#work-workfit">WorkFit LAB</a></p>
-          </div>
-          <div class="bridge-row reveal">
-            <p class="b-from"><a href="#report-04">04</a> 評価への不満と、経営者と従業員の認識のずれ</p>
-            <p class="b-issue">総合点で人を並べると、納得感と意欲が損なわれやすい</p>
-            <p class="b-to"><a href="#work-workfit">WorkFit LAB</a></p>
-          </div>
-          <div class="bridge-row reveal">
-            <p class="b-from"><a href="#report-04">04</a> 確認の仕組みがないと、恣意的な運用が残りやすい</p>
-            <p class="b-issue">誰に何が届いていないかが、記録に残らない</p>
-            <p class="b-to"><a href="#work-joden">情報伝達チェッカー</a></p>
-          </div>
-          <div class="bridge-row reveal">
-            <p class="b-from"><a href="#report-01">01</a> 組織的な学びの機会とつながっていない層</p>
-            <p class="b-issue">新人教育の漏れに、管理する側が気づけない</p>
-            <p class="b-to"><a href="#work-joden">情報伝達チェッカー</a></p>
-          </div>
-        </div>
-        <p class="note reveal">対応づけは、独立した分析の結果を作者が解釈してつないだものです。</p>
-      </div>
-    </section>
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 22px;
+  font-size: 0.95rem;
+}
+.nav-list a {
+  color: var(--sub);
+  text-decoration: none;
+}
+.nav-list a:hover { color: var(--teal); }
 
-    <!-- 制作物 -->
-    <section class="section section-tint" id="works">
-      <div class="wrap">
-        <h2 class="section-title reveal">制作物</h2>
+/* ===== はじめに ===== */
+.intro { padding: 72px 0 80px; }
 
-        <div class="works">
-          <article class="work reveal" id="work-joden">
-            <img class="work-img" src="images/joden-checker.png" alt="情報伝達チェッカーの管理者画面。伝達の経路がツリーで表示され、届いていない人が点線で示されている">
-            <div class="work-body">
-              <p class="work-kind">コンプライアンス管理・職場の心理的安全性</p>
-              <h3>情報伝達チェッカー</h3>
-              <p>社内の情報が「誰から誰へ、いつ届いたか」を記録し、業務連絡の途切れや新人教育の漏れを、管理者が一目で見つけられるようにする仕組みです。PWA化を前提としたデモ版として公開しています。</p>
-              <ul class="points">
-                <li>情報を「完了するまで残る案件」として扱う回覧板型の設計</li>
-                <li>操作を出来事として追記だけで記録し、状態やタイムラインを記録から作る</li>
-                <li>記録上のパターンを示すまでにとどめ、意図の判定は人の手続きに任せる</li>
-              </ul>
-              <p class="from-research">もとになった分析：<a href="#report-01">01</a>、<a href="#report-04">04</a></p>
-              <ul class="tags"><li>JavaScript</li><li>要件定義</li><li>Figma</li><li>Git / GitHub</li></ul>
-              <div class="actions">
-                <a class="btn" href="https://csd-od.github.io/joden-checker-demo/" target="_blank" rel="noopener">デモを開く</a>
-                <a class="btn btn-quiet" href="https://github.com/CSD-Od/joden-checker-demo" target="_blank" rel="noopener">GitHub</a>
-              </div>
-              <p class="small">ソースコードの全体は、選考の中で個別に公開できます。</p>
-            </div>
-          </article>
+.intro-hello {
+  margin-bottom: 12px;
+  color: var(--sub);
+}
 
-          <article class="work reveal" id="work-workfit">
-            <img class="work-img" src="images/workfit-lab.png" alt="WorkFit LABのトップページ">
-            <div class="work-body">
-              <p class="work-kind">人材の多面的な評価</p>
-              <h3>WorkFit LAB</h3>
-              <p>応募者を総合点で並べず、どんな情報の形式や判断の条件で力を発揮しやすいかを、業務に近い短い課題から観測する職務適性テストです。面接での情報整理と評価を補助します。</p>
-              <ul class="points">
-                <li>総合点を作らず、10の観点ごとの傾向として結果を示す採点設計</li>
-                <li>設問の重みと想定回答はサーバー内だけで扱い、ブラウザに渡さない</li>
-                <li>WordPressの仕組みに沿った、不正な送信や改ざんへの対策と権限の管理</li>
-              </ul>
-              <p class="from-research">もとになった分析：<a href="#report-01">01</a>、<a href="#report-02">02</a>、<a href="#report-04">04</a></p>
-              <ul class="tags"><li>WordPress</li><li>PHP</li><li>SQL</li><li>JavaScript</li><li>Figma</li></ul>
-              <div class="actions">
-                <a class="btn" href="https://csd-od.github.io/workfit-lab-demo/" target="_blank" rel="noopener">デモを開く</a>
-                <a class="btn btn-quiet" href="https://github.com/CSD-Od/workfit-lab-demo" target="_blank" rel="noopener">GitHub</a>
-              </div>
-              <p class="small">デモは静的版です。採点とデータベースはWordPress版で動作し、ソースコードの全体は選考の中で個別に公開できます。</p>
-            </div>
-          </article>
-        </div>
+.intro h1 {
+  margin-bottom: 24px;
+  font-size: clamp(1.3rem, 1.05rem + 1vw, 1.6rem);
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.03em;
+}
+/* 問いの部分だけ、行を分けて少し強く */
+.h1-question {
+  display: block;
+  margin-left: -0.5em; /* 【 の前の空きを詰めて、行頭をそろえる */
+  font-weight: 700;
+  color: var(--teal-dark);
+}
 
-        <h3 class="sub-title reveal">制作中</h3>
-        <div class="works works-text">
-          <article class="work work-plain reveal" id="work-gallery">
-            <div class="work-body">
-              <p class="work-kind">アクセス経路の設計とセキュリティ設計</p>
-              <h3>個人作品展示サイト</h3>
-              <p>一人の作者が作品を展示するための個人サイトです。作者が安心して運営を続けられることを最優先に、閲覧できる経路を厳しく限定し、閲覧者を追跡しない設計にしています。</p>
-              <ul class="points">
-                <li>すべてのアクセスを一つの入口に集め、公開範囲・時間帯・端末・流入元を確かめてから応答する。確認を通らずに見られるページや画像を作らない</li>
-                <li>許可していない経路や端末には、サイトがあること自体を見せない応答を返す</li>
-                <li>作品データは手元で暗号化してから置き、サーバー上でも暗号化したまま保管する</li>
-                <li>AI学習を目的とした収集を、機械が読める指示と技術的な措置の両面で断る</li>
-                <li>閲覧の記録は日ごとの件数だけにとどめ、セキュリティ上の出来事だけを、改ざんに気づける形で暗号化して残す</li>
-                <li>法令や規約が変わっても、コードを直さずに設定だけで公開範囲を絞れる</li>
-              </ul>
-              <ul class="tags"><li>PHP 8.5（フレームワークなし）</li><li>libsodium</li><li>SQLite</li><li>JavaScript</li><li>Figma</li></ul>
-              <p class="small">要件定義書（第2.38版まで改訂）と運用手順書を、実装と並行して更新しています。セキュリティ上の理由から、URLとソースコード、詳しい仕組みは公開していません。</p>
-            </div>
-          </article>
+.intro-lead {
+  max-width: 40em;
+  margin-bottom: 36px;
+}
 
-          <article class="work work-plain reveal" id="work-sns">
-            <div class="work-body">
-              <p class="work-kind">MVCフレームワークでの開発</p>
-              <h3>SNS（制作中）</h3>
-              <p>Laravel で制作しているSNSです。モデル・ビュー・コントローラーに役割を分ける MVC の構成で開発しています。</p>
-              <ul class="tags"><li>Laravel</li><li>PHP</li><li>SQL</li></ul>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+.want {
+  max-width: 44em;
+  padding: 22px 26px;
+  background: var(--card);
+  border: 1px dashed var(--line);
+  border-radius: 16px;
+}
 
-    <!-- 技術 -->
-    <section class="section" id="skills">
-      <div class="wrap">
-        <h2 class="section-title reveal">使っている技術</h2>
-        <dl class="skills">
-          <div class="skill-row reveal">
-            <dt>開発</dt>
-            <dd>PHP（フレームワークなし、WordPress、Laravel）、JavaScript、HTML / CSS、SQL（MySQL、SQLite）、Google Apps Script、Excel VBA</dd>
-          </div>
-          <div class="skill-row reveal">
-            <dt>調査・分析</dt>
-            <dd>Excel（ピボットテーブル、参照式で再計算できるシート設計）、公的統計の活用（OECD PIAAC、e-Stat）</dd>
-          </div>
-          <div class="skill-row reveal">
-            <dt>設計・管理</dt>
-            <dd>要件定義書と運用手順書の作成、Git / GitHub（非公開のリポジトリと公開用のリポジトリを分けて管理）</dd>
-          </div>
-          <div class="skill-row reveal">
-            <dt>デザイン</dt>
-            <dd>Figma、CLIP STUDIO PAINT（制作物のイラストやロゴは自作）</dd>
-          </div>
-          <div class="skill-row reveal">
-            <dt>学習中</dt>
-            <dd>Python</dd>
-          </div>
-        </dl>
-      </div>
-    </section>
+.want-title {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--gold-text);
+}
 
-    <!-- AI -->
-    <section class="section section-tint" id="ai">
-      <div class="wrap narrow">
-        <h2 class="section-title reveal">AIとの付き合い方</h2>
-        <p class="reveal">開発では、生成AI（Claude）を補助として使っています。AIが書いたコードは1行ずつ意味を確かめてから取り込み、理解があいまいなところは自分の手で書き写して確認します。そのうえで、仕様と合っているかを自分で検証しています。</p>
-        <p class="reveal">データの扱いには決まりを設けています。実在の個人情報を含むデータはAIに渡さず、AIに見せるのはテスト用の架空のデータだけにしています。また、公開しないコードは非公開のリポジトリで管理し、AIの学習に使われる設定もオフにしています。</p>
-      </div>
-    </section>
+/* ===== 進め方 ===== */
+.steps {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
 
-    <!-- これから -->
-    <section class="section" id="future">
-      <div class="wrap narrow">
-        <h2 class="section-title reveal">今後の目標</h2>
-        <p class="reveal">将来はサイバーセキュリティ分野の専門性を高め、情報保護やアクセス制御を考えた、安全な社内向けAI環境の構築に携わりたいと考えています。特に、コーディングやコードレビューを補助し、開発業務の効率化とセキュリティを両立できるシステムの実現を目指しています。</p>
-      </div>
-    </section>
-  </main>
+/* 番号どうしをつなぐ点線 */
+.steps::before {
+  content: "";
+  position: absolute;
+  top: 16px;
+  bottom: 16px;
+  left: 15px;
+  border-left: 1.5px dotted var(--teal);
+  opacity: 0.5;
+}
 
-  <footer class="site-footer" id="contact">
-    <div class="wrap">
-      <h2 class="footer-title">連絡先</h2>
-      <p>ご連絡は、リクルートサイトのメッセージ機能からお願いいたします。</p>
-      <p><a href="https://github.com/CSD-Od" target="_blank" rel="noopener">GitHub：CSD-Od</a></p>
-      <p class="copyright">© 2026 CSD-Od</p>
-    </div>
-  </footer>
+.step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 18px;
+}
 
-  <script src="js/main.js?v=20261109-2"></script>
-</body>
-</html>
+.step-no {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  background: var(--paper);
+  border: 1.5px solid var(--teal);
+  border-radius: 50%;
+  color: var(--teal);
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.step h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.8;
+}
+
+.eg {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.9rem;
+  color: var(--sub);
+}
+
+/* ===== 調査と分析 ===== */
+.reports {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.report {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 22px 24px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  scroll-margin-top: 24px;
+}
+
+.report-stage {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--gold-text);
+}
+
+.report h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.report-no {
+  margin-right: 0.5em;
+  color: var(--teal);
+}
+
+.report-meta {
+  margin: 0;
+  display: grid;
+  gap: 2px;
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+.report-meta div {
+  display: grid;
+  grid-template-columns: 7.5em 1fr;
+}
+.report-meta dt { color: var(--sub); }
+.report-meta dd { margin: 0; }
+
+.report > p:not(.report-stage) { font-size: 1rem; }
+
+.report-foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px 16px;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px dashed var(--line);
+  font-size: 0.875rem;
+}
+
+.links-to { color: var(--sub); }
+.file-link { font-weight: 500; }
+
+/* ===== 分析から、つくるものへ ===== */
+.bridge { border-bottom: 1px solid var(--line); }
+
+.bridge-head,
+.bridge-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 10em;
+  gap: 28px;
+}
+
+.bridge-head {
+  padding-bottom: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--gold-text);
+}
+
+.bridge-row {
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* 列のあいだに置く◆ */
+.b-from,
+.b-issue { position: relative; }
+.b-from::after,
+.b-issue::after {
+  content: "";
+  position: absolute;
+  top: 0.65em;
+  right: -18px;
+  width: 7px;
+  height: 7px;
+  background: var(--gold);
+  transform: rotate(45deg);
+}
+
+.b-to { font-weight: 700; }
+
+/* ===== 制作物 ===== */
+.works {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.work {
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  scroll-margin-top: 24px;
+}
+
+.work-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+  border-bottom: 1px solid var(--line);
+  background: var(--tint);
+}
+
+.work-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 22px 24px 24px;
+}
+
+.work-kind {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--gold-text);
+}
+
+.work h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.work-body > p { font-size: 1rem; }
+
+.points {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+.points li {
+  position: relative;
+  padding-left: 1.1em;
+}
+.points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.75em;
+  width: 5px;
+  height: 5px;
+  background: var(--teal);
+  border-radius: 50%;
+}
+
+.work-body .from-research {
+  font-size: 0.9rem;
+  color: var(--sub);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.tags li {
+  padding: 1px 10px;
+  background: var(--tint);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  line-height: 1.9;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 20px;
+  background: var(--teal);
+  border: 1.5px solid var(--teal);
+  border-radius: 999px;
+  color: #FFFFFF;
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+.btn:hover {
+  background: var(--teal-dark);
+  border-color: var(--teal-dark);
+  color: #FFFFFF;
+}
+
+.btn-quiet {
+  background: transparent;
+  color: var(--teal);
+}
+.btn-quiet:hover {
+  background: var(--card);
+  color: var(--teal-dark);
+}
+
+.sub-title {
+  margin: 56px 0 20px;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.work-plain { border-style: dashed; }
+
+.design-note {
+  padding: 12px 16px;
+  background: var(--tint);
+  border-radius: 10px;
+  font-size: 0.95rem;
+}
+
+/* ===== 使っている技術 ===== */
+.skills { margin: 0; }
+
+.skill-row {
+  display: grid;
+  grid-template-columns: 8em 1fr;
+  gap: 16px;
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+}
+.skill-row:last-child { border-bottom: 1px solid var(--line); }
+
+.skill-row dt {
+  font-weight: 700;
+  color: var(--gold-text);
+}
+.skill-row dd { margin: 0; }
+
+/* ===== AI・今後の目標 ===== */
+#ai p + p,
+#future p + p { margin-top: 16px; }
+
+/* ===== 連絡先 ===== */
+.site-footer {
+  padding: 64px 0 40px;
+  background: var(--ink);
+  color: #E9EFED;
+}
+
+.footer-title {
+  margin-bottom: 12px;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.site-footer a { color: #8FD6CF; }
+.site-footer a:hover { color: #B7E8E3; }
+.site-footer p + p { margin-top: 6px; }
+
+.copyright {
+  margin-top: 32px !important;
+  font-size: 0.8rem;
+  color: #A9B6B2;
+}
+
+/* ===== 下から浮き出るアニメーション ===== */
+/* JavaScriptが動くときだけ隠しておく（動かない環境でも内容は読める） */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* 動きを減らす設定の人には、アニメーションをしない */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ===== タブレット以下 ===== */
+@media (max-width: 820px) {
+  .reports,
+  .works { grid-template-columns: 1fr; }
+
+  .bridge-head { display: none; }
+  .bridge-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .b-from::after,
+  .b-issue::after { display: none; }
+
+  /* 見出しの代わりに、各行の中に小さな見出しを出す */
+  .b-from::before,
+  .b-issue::before,
+  .b-to::before {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--gold-text);
+  }
+  .b-from::before { content: "分析でわかったこと"; }
+  .b-issue::before { content: "取り出した課題"; }
+  .b-to::before { content: "制作物"; }
+}
+
+/* ===== スマホ ===== */
+@media (max-width: 560px) {
+  .wrap,
+  .wrap.narrow { width: min(860px, 100% - 36px); }
+  .section { padding: 60px 0; }
+  .intro { padding: 48px 0 60px; }
+  .want { padding: 18px 20px; }
+  .report,
+  .work-body { padding-left: 20px; padding-right: 20px; }
+  .skill-row {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}

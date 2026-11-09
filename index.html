@@ -194,6 +194,11 @@
             <p class="b-issue">新人教育の漏れに、管理する側が気づけない</p>
             <p class="b-to"><a href="#work-joden">情報伝達チェッカー</a></p>
           </div>
+          <div class="bridge-row reveal">
+            <p class="b-from"><a href="#report-04">04</a> 確認の仕組みがないと、恣意的な運用が残りやすい</p>
+            <p class="b-issue">誰が決め、誰が引き受けたかが曖昧なまま、責任が押し付けられる</p>
+            <p class="b-to"><a href="#work-agreement">合意ログ</a></p>
+          </div>
         </div>
         <p class="note reveal">対応づけは、独立した分析の結果を作者が解釈してつないだものです。</p>
       </div>
@@ -268,12 +273,20 @@
             </div>
           </article>
 
-          <article class="work work-plain reveal" id="work-sns">
+          <article class="work work-plain reveal" id="work-agreement">
             <div class="work-body">
-              <p class="work-kind">MVCフレームワークでの開発</p>
-              <h3>SNS（制作中）</h3>
-              <p>Laravel で制作しているSNSです。モデル・ビュー・コントローラーに役割を分ける MVC の構成で開発しています。</p>
-              <ul class="tags"><li>Laravel</li><li>PHP</li><li>SQL</li></ul>
+              <p class="work-kind">責任分界の管理・AIによる会話整理</p>
+              <h3>合意ログ（共同制作の合意形成・責任履歴の管理アプリ）</h3>
+              <p>複数人で何かを作るときの取り決めについて、誰が提案し、誰が承認し、誰が実行を引き受けたかを、根拠となる発言にさかのぼって確かめられるようにするアプリです。曖昧な発言や暗黙の期待から生まれる、責任の押し付け合いを防ぐことを目指しています。</p>
+              <ul class="points">
+                <li>提案した人・承認した人・実行を引き受けた人を別々に記録し、「言い出した人が責任者になる」混同を防ぐ</li>
+                <li>沈黙や既読、ただの賛同は承認とみなさない。承認は条項の版ごとに本人が明示して記録し、文面が変われば承認をやり直す</li>
+                <li>すべての出来事に根拠の発言をつなぎ、指定した時点で何が合意済みだったかを再現できる</li>
+                <li>意見が食い違うときは、それぞれの主張と、確認できる記録を分けて表示する</li>
+              </ul>
+              <p class="design-note"><strong>設計済み・実装予定：AIによるチャットの整理</strong><br>会話の要約や論点の整理、合意の候補の抽出をAIで支援します。AIの出力は人が確認するまで「候補」にとどめ、示された引用はサーバー側で原文と照らし合わせます。チャットに含まれる命令文はAIへの指示として実行せず、AIには承認や書き換えの権限を持たせません。</p>
+              <ul class="tags"><li>Laravel</li><li>PHP</li><li>Livewire</li><li>SQLite / PostgreSQL</li><li>OpenAI API</li></ul>
+              <p class="small">現在は、2人での合意・承認・版の管理・タイムラインを制作中です。要件定義書を段階ごとの計画とあわせて作成し、段階に沿って開発しています。</p>
             </div>
           </article>
         </div>
